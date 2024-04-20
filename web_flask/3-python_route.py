@@ -33,8 +33,9 @@ def cText(text):
     """
     return "C {}".format(text.replace("_", " "))
 
+@app.route('/python', strict_slashes=False)
 @app.route("/python/<text>", strict_slashes=False)
-def ptext(text):
+def ptext(text="is cool"):
     """
     Route handler function for '/python/<text>' URL.
     Display Python followed by the value of the text variable
