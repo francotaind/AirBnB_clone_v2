@@ -1,25 +1,38 @@
 #!/usr/bin/python3
-"""script that starts a flask web app"""
+""" A script that starts a Flask web application.
+"""
 
 from flask import Flask
 
-app = Flask(__name__)
+app = Flask("__name__")
 
 
 @app.route('/', strict_slashes=False)
 def hello():
-    return 'Hello HBNB!'
+    """
+    Route handler function for the root URL.
+    Return a given string.
+    """
+    return ("Hello HBNB!")
 
-@app.route('/hbnb', strict_slashes=False)
+
+@app.route("/hbnb", strict_slashes=False)
 def hbnb():
-    return 'HBNB'
+    """
+    Route handler function for '/hbnb' URL.
+    Returns a given string.
+    """
+    return ("HBNB")
+
 
 @app.route("/c/<text>", strict_slashes=False)
-def ctext(text):
-	"""Route handler function for the c text URL"""
-    return "c {}".format(text.replace("_"," "))
+def cText(text):
+    """
+    Route handler function for '/c/<text>' URL.
+    Display C followed by the value of the text variable
+    """
+    return "C {}".format(text.replace("_", " "))
 
-if __name__ == '__main__':
-    app.run(host='0.0.0.0', port=5000)
 
-
+if __name__ == "__main__":
+    app.run(host="0.0.0.0", port=5000, debug=None)
