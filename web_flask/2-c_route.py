@@ -14,10 +14,10 @@ def hello():
 def hbnb():
     return 'HBNB'
 
-@app.route('/c/<text>', strict_slashes=False)
+@app.route("/c/<text>", strict_slashes=False)
 def ctext(text):
 	"""Route handler function for the c text URL"""
-    return 'c {}'.format(text.replace("_"," "))
+    return "c {}".format(text.replace("_"," "))
 
 if __name__ == '__main__':
     app.run(host='0.0.0.0', port=5000)
