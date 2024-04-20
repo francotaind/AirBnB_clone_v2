@@ -11,7 +11,7 @@ app = Flask("__name__")
 def hello():
     """
     Route handler function for the root URL.
-    Return a given string.
+    Return a given string
     """
     return ("Hello HBNB!")
 
@@ -20,7 +20,7 @@ def hello():
 def hbnb():
     """
     Route handler function for '/hbnb' URL.
-    Returns a given string.
+    Returns a given string
     """
     return ("HBNB")
 
@@ -33,14 +33,13 @@ def cText(text):
     """
     return "C {}".format(text.replace("_", " "))
 
+
 @app.route('/python', strict_slashes=False)
 @app.route("/python/<text>", strict_slashes=False)
-def ptext(text="is cool"):
-    """
-    Route handler function for '/python/<text>' URL.
-    Display Python followed by the value of the text variable
-    """
+def pythonText(text="is cool"):
+    """Display Python followed by the value of the text variable"""
     return "Python {}".format(text.replace("_", " "))
+
 
 if __name__ == "__main__":
     app.run(host="0.0.0.0", port=5000, debug=None)
